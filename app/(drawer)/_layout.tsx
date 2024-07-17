@@ -15,8 +15,6 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
   const { theme } = useTheme();
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <DrawerContentScrollView {...props}>
       <DrawerItem
