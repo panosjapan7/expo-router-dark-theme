@@ -21,7 +21,7 @@
     <br />
     <br />
 - 2 Levels Deep (Tabs):
-  - 1 Tabs Navigator (`app/(drawer)/(tabs)/_layout.tsx`) with 3 screens (`app/(drawer)/(tabs)/bonus`, `app/(drawer)/(tabs)/feed`, `app/(drawer)/(tabs)/hidden`).
+  - 1 Tabs Navigator (`app/(drawer)/(tabs)/_layout.tsx`) with 3 screens (`app/(drawer)/(tabs)/feed`, `app/(drawer)/(tabs)/profile`, `app/(drawer)/(tabs)/hidden`).
   - The `hidden` screen is hidden from the Tab menu items
   - The Drawer icon is visible and Drawer menu can be toggled
     <br />
