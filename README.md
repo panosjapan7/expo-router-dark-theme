@@ -30,4 +30,6 @@
     <br />
     <br />
 
-## The light/dark theme can be toggled from all levels of navigation
+### The light/dark theme can be toggled from all levels of navigation
+
+### The app makes use of Google Fonts
