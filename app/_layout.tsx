@@ -1,7 +1,7 @@
 // ./client/app/_layout.tsx
 import { useEffect } from "react";
-import { Stack, router } from "expo-router";
-import { StatusBar, StyleSheet, View } from "react-native";
+import { Stack, router, usePathname } from "expo-router";
+import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -33,6 +33,7 @@ const CloseButton = () => {
 
 const ThemeStyledStack = () => {
   const { theme } = useTheme();
+  const pathname = usePathname();
 
   const screenOptions = {
     headerStyle: {
@@ -49,7 +50,15 @@ const ThemeStyledStack = () => {
   return (
     <>
       <StatusBar
-        barStyle={theme === "light" ? "dark-content" : "light-content"}
+        barStyle={
+          pathname === "/reset-password" &&
+          theme === "light" &&
+          Platform.OS === "ios"
+            ? "light-content"
+            : theme === "light"
+            ? "dark-content"
+            : "light-content"
+        }
         backgroundColor={theme === "light" ? "#fff" : "#000"}
       />
       <Stack screenOptions={screenOptions}>
