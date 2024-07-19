@@ -8,6 +8,10 @@ export const useGlobalStyles = () => {
   const themeTextColor = theme === "light" ? "#000" : "#fff";
 
   const styles = StyleSheet.create({
+    rootContainer: {
+      flex: 1,
+      backgroundColor: theme === "light" ? "#fff" : "#282828",
+    },
     container: {
       flex: 1,
       backgroundColor: theme === "light" ? "#fff" : "#282828",

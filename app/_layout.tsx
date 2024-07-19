@@ -16,6 +16,7 @@ import {
 
 import { ThemeProvider, useTheme } from "../contexts/ThemeContext";
 import HeaderThemeButton from "../components/HeaderThemeButton";
+import { useGlobalStyles } from "../styles/styles";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -90,6 +91,7 @@ const RootLayout = () => {
     Inter_700Bold,
     Inter_900Black,
   });
+  const globalStyles = useGlobalStyles();
 
   useEffect(() => {
     if (fontsLoaded || error) {
@@ -102,18 +104,25 @@ const RootLayout = () => {
   }
 
   return (
+    <View style={globalStyles.rootContainer}>
+      <ThemeStyledStack />
+    </View>
+  );
+};
+
+const App = () => {
+  return (
     <ThemeProvider>
-      <View style={styles.container}>
-        <ThemeStyledStack />
-      </View>
+      <RootLayout />
     </ThemeProvider>
   );
 };
 
-export default RootLayout;
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#282828",
   },
 });
