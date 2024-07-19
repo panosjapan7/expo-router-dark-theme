@@ -10,7 +10,7 @@ export const useGlobalStyles = () => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: theme === "light" ? "#fff" : "#000",
+      backgroundColor: theme === "light" ? "#fff" : "#282828",
       justifyContent: "center",
       alignItems: "center",
       padding: 20,

@@ -13,9 +13,15 @@ const TabsLayout = () => {
     <Tabs
       screenOptions={{
         headerShadowVisible: false,
-        headerStyle: { backgroundColor: theme === "light" ? "#fff" : "#000" },
+        headerStyle: {
+          backgroundColor: theme === "light" ? "#fff" : "#282828",
+        },
         headerTintColor: theme === "light" ? "#000" : "#fff",
-        tabBarStyle: { backgroundColor: theme === "light" ? "#fff" : "#000" },
+        tabBarStyle: {
+          backgroundColor: theme === "light" ? "#fff" : "#282828",
+          borderTopWidth: 0,
+        },
+
         tabBarLabelStyle: { color: theme === "light" ? "#000" : "#fff" },
         tabBarActiveTintColor: theme === "light" ? "#000" : "#fff",
         headerLeft: () => (

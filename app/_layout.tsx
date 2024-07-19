@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Stack, router, usePathname } from "expo-router";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -37,7 +38,7 @@ const ThemeStyledStack = () => {
 
   const screenOptions = {
     headerStyle: {
-      backgroundColor: theme === "light" ? "#fff" : "#000",
+      backgroundColor: theme === "light" ? "#fff" : "#282828",
     },
     headerTitleStyle: {
       color: theme === "light" ? "#000" : "#fff",
@@ -61,20 +62,22 @@ const ThemeStyledStack = () => {
         }
         backgroundColor={theme === "light" ? "#fff" : "#000"}
       />
-      <Stack screenOptions={screenOptions}>
-        <Stack.Screen name="index" options={{ headerTitle: "Home" }} />
-        <Stack.Screen name="register" options={{ headerTitle: "Register" }} />
-        <Stack.Screen name="login" options={{ headerTitle: "Login" }} />
-        <Stack.Screen
-          name="reset-password"
-          options={{
-            presentation: "modal",
-            headerTitle: "Reset Password",
-            headerLeft: () => <CloseButton />,
-          }}
-        />
-        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-      </Stack>
+      <SafeAreaView edges={["right", "left"]} style={{ flex: 1 }}>
+        <Stack screenOptions={screenOptions}>
+          <Stack.Screen name="index" options={{ headerTitle: "Home" }} />
+          <Stack.Screen name="register" options={{ headerTitle: "Register" }} />
+          <Stack.Screen name="login" options={{ headerTitle: "Login" }} />
+          <Stack.Screen
+            name="reset-password"
+            options={{
+              presentation: "modal",
+              headerTitle: "Reset Password",
+              headerLeft: () => <CloseButton />,
+            }}
+          />
+          <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+        </Stack>
+      </SafeAreaView>
     </>
   );
 };

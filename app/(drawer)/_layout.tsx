@@ -88,7 +88,9 @@ const DrawerLayout = () => {
         options={{
           headerTitle: "Settings",
           drawerLabel: "Settings",
-          headerStyle: { backgroundColor: theme === "light" ? "#fff" : "#000" },
+          headerStyle: {
+            backgroundColor: theme === "light" ? "#fff" : "#282828",
+          },
           headerTitleStyle: { color: theme === "light" ? "#000" : "#fff" },
           headerShown: true,
         }}
